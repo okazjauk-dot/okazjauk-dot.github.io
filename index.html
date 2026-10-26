@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Aplikacje – taniejo.pl</title>
+  <style>
+    :root { color-scheme: light dark; --fg: #1b1b1b; --bg: #fafafa; --muted: #5c5c5c; --card: #fff; --line: #e3e3e3; --link: #0b5cad; }
+    @media (prefers-color-scheme: dark) { :root { --fg: #ececec; --bg: #141414; --muted: #a8a8a8; --card: #1e1e1e; --line: #333; --link: #7fb3ff; } }
+    body { margin: 0; font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--fg); background: var(--bg); }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+    h1 { font-size: 1.9rem; margin: 0 0 .25rem; }
+    .muted { color: var(--muted); }
+    .card { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 22px; margin-top: 20px; }
+    .card h2 { margin: 0 0 .35rem; font-size: 1.2rem; }
+    a { color: var(--link); }
+    footer { margin-top: 40px; font-size: .95rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Aplikacje dla sprzedawców</h1>
+  <p class="muted">Strony informacyjne aplikacji korzystających z Allegro REST API. Właściciel: taniejo.pl.</p>
+
+  <div class="card">
+    <h2><a href="/mpagent/">Zarządzanie Allegro</a></h2>
+    <p>Obsługa posprzedażowa sprzedawcy Allegro: wiadomości, dyskusje i reklamacje, zwroty, zwroty pieniędzy
+       i prowizji, oceny – z akceptacją człowieka tam, gdzie w grę wchodzą pieniądze. Kod projektu: <code>mpagent</code>.</p>
+  </div>
+
+  <div class="card">
+    <h2><a href="https://zwroty-paczek.web.app/o-aplikacji.html">zwroty-paczek</a></h2>
+    <p>Obsługa fizycznych zwrotów paczek w magazynie: paczki wracające do nadawcy, przyjęcie przez skan, decyzje
+       i zadania dla magazynu.</p>
+  </div>
+
+  <footer>Kontakt: <a href="mailto:admin@taniejo.pl">admin@taniejo.pl</a></footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Zarządzanie Allegro – informacje o aplikacji</title>
+  <style>
+    :root { color-scheme: light dark; --fg: #1b1b1b; --bg: #fafafa; --muted: #5c5c5c; --card: #fff; --line: #e3e3e3; --link: #0b5cad; }
+    @media (prefers-color-scheme: dark) { :root { --fg: #ececec; --bg: #141414; --muted: #a8a8a8; --card: #1e1e1e; --line: #333; --link: #7fb3ff; } }
+    body { margin: 0; font: 17px/1.55 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color: var(--fg); background: var(--bg); }
+    main { max-width: 760px; margin: 0 auto; padding: 48px 16px 64px; }
+    h1 { font-size: 1.9rem; margin: 0 0 .25rem; }
+    h2 { font-size: 1.2rem; margin: 1.8rem 0 .5rem; }
+    .muted { color: var(--muted); }
+    code { background: var(--card); border: 1px solid var(--line); border-radius: 6px; padding: 1px 6px; font-size: .95em; }
+    table { border-collapse: collapse; width: 100%; margin-top: .5rem; }
+    td { padding: 8px 10px; border-top: 1px solid var(--line); vertical-align: top; }
+    td:first-child { color: var(--muted); white-space: nowrap; width: 11em; }
+    a { color: var(--link); }
+    ul { padding-left: 1.2rem; }
+    footer { margin-top: 40px; font-size: .95rem; color: var(--muted); }
+  </style>
+</head>
+<body>
+<main>
+  <p class="muted"><a href="/">Aplikacje</a> › Zarządzanie Allegro</p>
+  <h1>Zarządzanie Allegro</h1>
+  <p class="muted">Aplikacja zarejestrowana w Allegro REST API · nagłówek <code>User-Agent: Zarządzanie-Allegro/0.1.0 (+https://okazjauk-dot.github.io/mpagent/)</code> · kod projektu <code>mpagent</code></p>
+
+  <h2>Kto za nią odpowiada</h2>
+  <table>
+    <tr><td>Właściciel</td><td>taniejo.pl</td></tr>
+    <tr><td>Kontakt</td><td><a href="mailto:admin@taniejo.pl">admin@taniejo.pl</a> – odpowiadamy w dni robocze</td></tr>
+    <tr><td>Konto rejestrujące</td><td>okazjauk (Allegro)</td></tr>
+  </table>
+
+  <h2>Do czego służy</h2>
+  <p>Narzędzie obsługi posprzedażowej dla sprzedawców Allegro. Czyta sprawy klientów z API Allegro, przygotowuje
+     odpowiedzi i proponuje działania, a wykonuje je dopiero po akceptacji przez pracownika sprzedawcy
+     (lub automatycznie – wyłącznie w ramach limitów ustawionych przez sprzedawcę). Główne funkcje:</p>
+  <ul>
+    <li>odpowiedzi na wiadomości kupujących w Centrum Wiadomości, w tym „Problemy z zakupem”,</li>
+    <li>prowadzenie dyskusji i roszczeń (reklamacje, „nie otrzymałem przesyłki”),</li>
+    <li>obsługa zwrotów: potwierdzenie, zwrot pieniędzy, zwrot częściowy, odrzucenie z uzasadnieniem,</li>
+    <li>wnioski o zwrot prowizji po zwrotach i anulowaniach,</li>
+    <li>odpowiedzi na oceny i wnioski o ich usunięcie,</li>
+    <li>proaktywne informowanie kupujących o problemach z zamówieniem – wyłącznie przez Centrum Wiadomości,</li>
+    <li>pilnowanie terminów (czas odpowiedzi, 14 dni na reklamację, zwroty) i pełny dziennik wykonanych działań.</li>
+  </ul>
+
+  <h2>Jak korzysta z Allegro REST API</h2>
+  <table>
+    <tr><td>Autoryzacja</td><td>OAuth 2.0, Device flow. Każde konto sprzedawcy autoryzuje aplikację samodzielnie
+      na stronie Allegro; aplikacja nigdy nie pyta o login ani hasło do Allegro. Dostęp można cofnąć w każdej chwili
+      w Allegro: Moje Allegro → Ustawienia → Powiązane aplikacje.</td></tr>
+    <tr><td>Zasoby</td><td><code>/messaging</code>, <code>/sale/issues</code>, <code>/order/customer-returns</code>,
+      <code>/order/checkout-forms</code>, <code>/order/events</code>, <code>/order/refund-claims</code>,
+      <code>/payments/refunds</code>, <code>/sale/user-ratings</code>, <code>/billing</code></td></tr>
+    <tr><td>Tryb pracy</td><td>Odpytywanie co 1–2 minuty z poszanowaniem limitów API; operacje zapisu tylko po
+      akceptacji lub w ramach polityki sprzedawcy; każde żądanie z nagłówkiem <code>User-Agent</code> jak wyżej.</td></tr>
+    <tr><td>Regulamin</td><td>Jedna aplikacja (jeden Client ID) obsługuje wiele kont sprzedawców; klucz nie jest
+      udostępniany podmiotom trzecim; komunikacja z kupującymi odbywa się wyłącznie przez Allegro.</td></tr>
+  </table>
+
+  <h2>Dane osobowe</h2>
+  <p>Aplikacja przetwarza dane kupujących (login, treść wiadomości, dane zamówienia) wyłącznie w celu obsługi ich
+     spraw u sprzedawcy, który ją autoryzował. Dane nie są przekazywane innym podmiotom ani wykorzystywane do
+     marketingu; są usuwane po upływie okresu retencji ustalonego ze sprzedawcą. Pytania i żądania dotyczące danych:
+     <a href="mailto:admin@taniejo.pl">admin@taniejo.pl</a>.</p>
+
+  <footer>Ostatnia aktualizacja: 26.10.2026 · wersja aplikacji 0.1.0</footer>
+</main>
+</body>
+</html>
